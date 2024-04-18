@@ -10,3 +10,5 @@ _build
 pnpm-lock.yaml
 
 app/routes
+app/node_modules
+app/.app.mobjs
