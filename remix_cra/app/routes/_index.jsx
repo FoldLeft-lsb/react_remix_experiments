@@ -1,4 +1,4 @@
-import { Link, json, useLoaderData } from "@remix-run/react";
+import { Link, json, useLoaderData, useSearchParams } from "@remix-run/react";
 import { useState, useEffect } from "react";
 
 export async function loader() {
@@ -16,11 +16,7 @@ export const meta = () => {
 export default function Index() {
   const greeting = useLoaderData();
 
-  const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    console.log("Effect: ", search);
-  }, [search]);
+  const [searchParams] = useSearchParams();
 
   return (
     <div>
@@ -28,24 +24,19 @@ export default function Index() {
       <Link to="/demo">Demo page</Link>
       <br />
       {greeting}
-      <SomeForm setSearch={setSearch} />
+      <SomeForm searchParams={searchParams} />
     </div>
   );
 }
 
-function SomeForm({ setSearch }) {
+function SomeForm({ searchParams }) {
   return (
-    <form onSubmit={
-      e => {
-        e.preventDefault();
-        setSearch(e.target.query.value);
-      }
-    } >
+    <form>
       <label>
         query:
         <input
           name="query"
-          defaultValue={""}
+          defaultValue={searchParams.get("query")}
         />
       </label>
     </form>
