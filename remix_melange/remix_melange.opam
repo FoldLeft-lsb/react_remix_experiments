@@ -1,0 +1,24 @@
+opam-version: "2.0"
+synopsis: "Remix Melange"
+description: "Trying to use ReasonML for Remix"
+maintainer: ["lboyle@protonmail.com"]
+authors: ["lboyle@protonmail.com"]
+license: "MIT"
+homepage: "https://github.com/FoldLeft-lsb"
+bug-reports: "https://github.com/FoldLeft-lsb"
+depends: [
+  "ocaml"
+  "reason" {>= "3.10.0"}
+  "dune" {>= "3.9"}
+  "melange" {>= "2.0.0"}
+  "reason-react" {>= "0.13.0"}
+  "reason-react-ppx"
+  "opam-check-npm-deps" {with-test} 
+  "ocaml-lsp-server" {with-test} 
+  "dot-merlin-reader" {with-test} 
+  "odoc" {with-doc}
+  "ocamlformat"
+  "melange-json"
+  "melange-fetch"
+]
+# dev-repo: "git+https://github.com/FoldLeft-lsb.git"

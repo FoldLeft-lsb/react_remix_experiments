@@ -1,0 +1,21 @@
+(lang dune 3.8)
+
+(using melange 0.1)
+
+(name remix_melange)
+
+(license "MIT")
+
+(maintainers lboyle@protonmail.com)
+
+(authors lboyle@protonmail.com)
+
+(homepage https://github.com/FoldLeft-lsb)
+
+(bug_reports https://github.com/FoldLeft-lsb)
+
+(package
+ (allow_empty)
+ (name remix_melange)
+ (synopsis "Remix Melange")
+ (description "Trying to use ReasonML for Remix"))
